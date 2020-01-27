@@ -13,8 +13,10 @@
   <br>
   
   <%= f.fields_for :notes do |note_f| %>
-  
+    <%= note_f.label :note %>
+    <%= note_f.text_field :content %>
   <% end %>
+  <br>
   
   <%= f.submit %>
 <% end %>
