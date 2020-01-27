@@ -3,7 +3,7 @@ class Song < ActiveRecord::Base
   belongs_to :genre
   has_many :notes
   
-  accepts_nested_attributes_for :notes, reject_if: proc { 
+  accepts_nested_attributes_for :notes, reject_if: proc { |attributes|
   
   def artist_name=(name)
     self.artist = Artist.find_or_create_by(name: name)
